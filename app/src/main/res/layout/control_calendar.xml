@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:weightSum="2"
+	android:fitsSystemWindows="true"
+	>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.4">
+		<LinearLayout
+			android:id="@+id/calendar_header_Activity"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_gravity="center"
+			android:orientation="horizontal"
+			android:padding="5dp"
+			android:weightSum="4"
+			android:baselineAligned="false">
+
+			<LinearLayout
+				android:id="@+id/day_view"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:background="@drawable/shadow_17855"
+				>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:gravity="center"
+					android:orientation="vertical">
+
+					<androidx.appcompat.widget.AppCompatImageView
+						android:id="@+id/day_view_image"
+						android:layout_width="60px"
+						android:layout_height="60px"
+						android:src="@drawable/calendar_day_selected">
+
+					</androidx.appcompat.widget.AppCompatImageView>
+
+
+
+					<TextView
+						android:id="@+id/day_view_text"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textColor="#bb1f2c"
+						android:text="Day"
+						android:textSize="12sp"
+						android:gravity="center_horizontal">
+
+					</TextView>
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+
+			<LinearLayout
+				android:id="@+id/week_view"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:background="@drawable/shadow_115330"
+				android:gravity="center_horizontal">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:gravity="center"
+					android:orientation="vertical">
+
+					<androidx.appcompat.widget.AppCompatImageView
+						android:id="@+id/week_view_image"
+						android:layout_width="60px"
+						android:layout_height="60px"
+						android:src="@drawable/calendar_week">
+
+					</androidx.appcompat.widget.AppCompatImageView>
+
+
+
+					<TextView
+						android:id="@+id/week_view_text"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textColor="#4a4a4a"
+						android:text="Week"
+						android:textSize="12sp"
+						android:gravity="center_horizontal">
+
+					</TextView>
+
+				</LinearLayout>
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/woork_week_view"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:background="@drawable/shadow_115330"
+				android:gravity="center_horizontal">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:gravity="center"
+					android:orientation="vertical">
+
+					<androidx.appcompat.widget.AppCompatImageView
+						android:id="@+id/work_week_image"
+						android:layout_width="60px"
+						android:layout_height="60px"
+						android:src="@drawable/calendar_work_week">
+
+					</androidx.appcompat.widget.AppCompatImageView>
+
+
+
+					<TextView
+						android:id="@+id/work_week_text"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textColor="#4a4a4a"
+						android:text="Work Week"
+						android:textSize="12sp"
+						android:gravity="center_horizontal">
+
+					</TextView>
+
+				</LinearLayout>
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/month_view"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:background="@drawable/shadow_115330"
+				android:gravity="center_horizontal">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:gravity="center"
+					android:orientation="vertical">
+
+					<androidx.appcompat.widget.AppCompatImageView
+						android:id="@+id/month_view_image"
+						android:layout_width="60px"
+						android:layout_height="60px"
+						android:src="@drawable/calendar_month">
+
+					</androidx.appcompat.widget.AppCompatImageView>
+					<TextView
+						android:id="@+id/month_view_text"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textColor="#4a4a4a"
+						android:text="Month"
+						android:textSize="12sp"
+						android:gravity="center_horizontal">
+
+					</TextView>
+
+				</LinearLayout>
+			</LinearLayout>
+
+		</LinearLayout>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:orientation="vertical"
+		android:layout_weight="1.6">
+		<!-- date toolbar -->
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/calendar_header"
+			>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingTop="9dp"
+				android:paddingBottom="9dp"
+				android:paddingLeft="30dp"
+				android:paddingRight="30dp">
+
+				<!-- prev button -->
+				<androidx.appcompat.widget.AppCompatImageView
+					android:id="@+id/calendar_prev_button"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_centerVertical="true"
+					android:layout_alignParentLeft="true"
+					android:src="@drawable/ic_keyboard_arrow_left_grey_24dp"/>
+
+				<!-- date title -->
+				<LinearLayout
+					android:id="@+id/calendar_date_display"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerVertical="true"
+					android:layout_toRightOf="@+id/calendar_prev_button"
+					android:layout_toLeftOf="@+id/calendar_next_button"
+					android:gravity="center"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/calendar_month_display"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_toRightOf="@+id/calendar_prev_button"
+						android:textAppearance="@android:style/TextAppearance.Medium"
+						android:textColor="#ffffff"
+						tools:text="March"
+						android:paddingRight="5dp"
+						android:textSize="16sp"/>
+
+					<TextView
+						android:id="@+id/calendar_year_display"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textAppearance="@android:style/TextAppearance.Medium"
+						android:textColor="#ffffff"
+						tools:text="2019"
+						android:textSize="16sp"/>
+				</LinearLayout>
+
+
+				<!-- next button -->
+				<androidx.appcompat.widget.AppCompatImageView
+					android:id="@+id/calendar_next_button"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_centerVertical="true"
+					android:layout_alignParentRight="true"
+					android:src="@drawable/ic_keyboard_arrow_right_white_24dp"/>
+			</RelativeLayout>
+
+			<!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="9dp">
+                &lt;!&ndash; prev button &ndash;&gt;
+                <ImageView
+                    android:id="@+id/calendar_prev_button"
+                    android:layout_width="65px"
+                    android:layout_height="65px"
+                    android:src="@drawable/ic_keyboard_arrow_left_grey_24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                />
+                &lt;!&ndash; date title &ndash;&gt;
+                <TextView
+                    android:id="@+id/calendar_month_display"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/calendar_prev_button"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                    android:textColor="#ffffff"
+                    android:text="March"
+                    android:paddingRight="5dp"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/calendar_year_display"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                    android:textColor="#ffffff"
+                    android:text="2019"
+                    android:textSize="16sp"/>
+
+                &lt;!&ndash; next button &ndash;&gt;
+                <ImageView
+                    android:id="@+id/calendar_next_button"
+                    android:layout_width="65px"
+                    android:layout_height="65px"
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+    />
+            </LinearLayout>-->
+
+		</RelativeLayout>
+
+		<!-- days header -->
+		<LinearLayout
+			android:visibility="gone"
+			android:id="@+id/calendar_header_month"
+			android:layout_width="match_parent"
+			android:layout_height="55px"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:background="#ffeeef"
+			android:weightSum="7"
+			>
+
+			<TextView
+				android:id="@+id/mondayText"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="M"/>
+
+			<TextView
+				android:id="@+id/tuesdayText"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="T"/>
+
+			<TextView
+				android:id="@+id/wednesdayText"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="W"/>
+
+			<TextView
+				android:id="@+id/thursdayText"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="T"/>
+
+			<TextView
+				android:id="@+id/fridayText"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="F"/>
+
+			<TextView
+				android:id="@+id/saturdayText"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="S"/>
+
+			<TextView
+				android:id="@+id/sundayText"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="S"/>
+		</LinearLayout>
+
+		<!-- days header -->
+		<LinearLayout
+			android:visibility="gone"
+			android:id="@+id/calendar_header_week"
+			android:layout_width="match_parent"
+			android:layout_height="55px"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:background="#ffeeef"
+			android:weightSum="7"
+			>
+
+			<TextView
+				android:id="@+id/mondayTextt"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="M"/>
+
+			<TextView
+				android:id="@+id/tuesdayTextt"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="T"/>
+
+			<TextView
+				android:id="@+id/wednesdayTextt"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="W"/>
+
+			<TextView
+				android:id="@+id/thursdayTextt"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="T"/>
+
+			<TextView
+				android:id="@+id/fridayTextt"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="F"/>
+
+			<TextView
+				android:id="@+id/saturdayTextt"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="S"/>
+
+			<TextView
+				android:id="@+id/sundayTextt"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:textColor="#bb1f2c"
+				android:text="S"/>
+		</LinearLayout>
+
+		<!-- days header -->
+		<LinearLayout
+			android:visibility="gone"
+			android:id="@+id/calendar_header_workweek"
+			android:layout_width="match_parent"
+			android:layout_height="55px"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:background="#ffeeef"
+			android:weightSum="7"
+			>
+
+
+		</LinearLayout>
+
+		<TextView
+			android:id="@+id/day_view_cd"
+			android:layout_width="match_parent"
+			android:layout_height="55px"
+			android:gravity="center"
+			android:textColor="#bb1f2c"
+			android:text="M"/>
+
+		<!-- days view -->
+		<GridView
+			android:visibility="gone"
+			android:id="@+id/calendar_grid"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:numColumns="7"
+			android:horizontalSpacing="2dp"
+			android:verticalSpacing="2dp"
+			android:elevation="1dp"
+			android:background="@color/white"
+			/>
+
+		<LinearLayout
+			android:visibility="visible"
+			android:id="@+id/linear_day_view"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:elevation="4dp">
+
+			<TextView
+				android:id="@+id/date_view_cd"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minHeight="57px"
+				android:gravity="center"
+				android:textAlignment="center"
+				android:textColor="#bb1f2c"
+				android:textSize="29px"
+				android:text="00"
+				android:background="@drawable/day_bg"
+			/>
+
+			<LinearLayout
+				android:orientation="vertical" android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<androidx.core.widget.NestedScrollView
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					>
+
+					<LinearLayout
+						android:id="@+id/dayview_container"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:orientation="vertical"
+						>
+					</LinearLayout>
+
+				</androidx.core.widget.NestedScrollView>
+			</LinearLayout>
+
+			<!--
+
+			<androidx.core.widget.NestedScrollView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="vertical">
+					<RelativeLayout
+						android:orientation="horizontal"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:minHeight="200px"
+						>
+
+						<TextView
+							android:id="@+id/text_hour"
+							android:layout_width="100px"
+							android:layout_height="200px"
+							android:gravity="center_vertical"
+							android:textSize="12sp"
+							android:textColor="#4a4a4a"
+							android:textAlignment="center"
+							android:text="00"
+							android:background="@drawable/hour_bg"
+							/>
+
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="200px"
+							android:orientation="vertical"
+							android:background="@drawable/day_bg">
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+						</LinearLayout>
+
+						</RelativeLayout>
+					&lt;!&ndash;<RelativeLayout
+						android:orientation="horizontal"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:minHeight="200px"
+						>
+
+						<TextView
+							android:layout_width="100px"
+							android:layout_height="200px"
+							android:gravity="center_vertical"
+							android:textSize="12sp"
+							android:textColor="#4a4a4a"
+							android:textAlignment="center"
+							android:text="12:00"
+							android:background="@drawable/hour_bg"
+							/>
+
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="200px"
+							android:orientation="vertical"
+							android:background="@drawable/day_bg">
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+						</LinearLayout>
+
+					</RelativeLayout>
+					<RelativeLayout
+						android:orientation="horizontal"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:minHeight="200px"
+						>
+
+						<TextView
+							android:layout_width="100px"
+							android:layout_height="200px"
+							android:gravity="center_vertical"
+							android:textSize="12sp"
+							android:textColor="#4a4a4a"
+							android:textAlignment="center"
+							android:text="12:00"
+							android:background="@drawable/hour_bg"
+							/>
+
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="200px"
+							android:orientation="vertical"
+							android:background="@drawable/day_bg">
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+						</LinearLayout>
+
+					</RelativeLayout>
+					<RelativeLayout
+						android:orientation="horizontal"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:minHeight="200px"
+						>
+
+						<TextView
+							android:layout_width="100px"
+							android:layout_height="200px"
+							android:gravity="center_vertical"
+							android:textSize="12sp"
+							android:textColor="#4a4a4a"
+							android:textAlignment="center"
+							android:text="12:00"
+							android:background="@drawable/hour_bg"
+							/>
+
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="200px"
+							android:orientation="vertical"
+							android:background="@drawable/day_bg">
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+						</LinearLayout>
+
+					</RelativeLayout>
+					<RelativeLayout
+						android:orientation="horizontal"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:minHeight="200px"
+						>
+
+						<TextView
+							android:layout_width="100px"
+							android:layout_height="200px"
+							android:gravity="center_vertical"
+							android:textSize="12sp"
+							android:textColor="#4a4a4a"
+							android:textAlignment="center"
+							android:text="12:00"
+							android:background="@drawable/hour_bg"
+							/>
+
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="200px"
+							android:orientation="vertical"
+							android:background="@drawable/day_bg">
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+							<View
+								android:layout_marginLeft="101px"
+								android:layout_width="match_parent"
+								android:layout_height="4px"
+								android:background="#d7d7d7">
+
+							</View>
+
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:textSize="12sp">
+							</TextView>
+
+						</LinearLayout>
+
+					</RelativeLayout>
+					<RelativeLayout
+					android:orientation="horizontal"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:minHeight="200px"
+					>
+
+					<TextView
+						android:layout_width="100px"
+						android:layout_height="200px"
+						android:gravity="center_vertical"
+						android:textSize="12sp"
+						android:textColor="#4a4a4a"
+						android:textAlignment="center"
+						android:text="12:00"
+						android:background="@drawable/hour_bg"
+						/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="200px"
+						android:orientation="vertical"
+						android:background="@drawable/day_bg">
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+
+						<View
+							android:layout_marginLeft="101px"
+							android:layout_width="match_parent"
+							android:layout_height="4px"
+							android:background="#d7d7d7">
+
+						</View>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+
+						<View
+							android:layout_marginLeft="101px"
+							android:layout_width="match_parent"
+							android:layout_height="4px"
+							android:background="#d7d7d7">
+
+						</View>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+						<View
+							android:layout_marginLeft="101px"
+							android:layout_width="match_parent"
+							android:layout_height="4px"
+							android:background="#d7d7d7">
+
+						</View>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+
+					</LinearLayout>
+
+				</RelativeLayout>
+					<RelativeLayout
+					android:orientation="horizontal"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:minHeight="200px"
+					>
+
+					<TextView
+						android:layout_width="100px"
+						android:layout_height="200px"
+						android:gravity="center_vertical"
+						android:textSize="12sp"
+						android:textColor="#4a4a4a"
+						android:textAlignment="center"
+						android:text="12:00"
+						android:background="@drawable/hour_bg"
+						/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="200px"
+						android:orientation="vertical"
+						android:background="@drawable/day_bg">
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+
+						<View
+							android:layout_marginLeft="101px"
+							android:layout_width="match_parent"
+							android:layout_height="4px"
+							android:background="#d7d7d7">
+
+						</View>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+
+						<View
+							android:layout_marginLeft="101px"
+							android:layout_width="match_parent"
+							android:layout_height="4px"
+							android:background="#d7d7d7">
+
+						</View>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+						<View
+							android:layout_marginLeft="101px"
+							android:layout_width="match_parent"
+							android:layout_height="4px"
+							android:background="#d7d7d7">
+
+						</View>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+
+					</LinearLayout>
+
+				</RelativeLayout>
+					<RelativeLayout
+					android:orientation="horizontal"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:minHeight="200px"
+					>
+
+					<TextView
+						android:layout_width="100px"
+						android:layout_height="200px"
+						android:gravity="center_vertical"
+						android:textSize="12sp"
+						android:textColor="#4a4a4a"
+						android:textAlignment="center"
+						android:text="12:00"
+						android:background="@drawable/hour_bg"
+						/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="200px"
+						android:orientation="vertical"
+						android:background="@drawable/day_bg">
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+
+						<View
+							android:layout_marginLeft="101px"
+							android:layout_width="match_parent"
+							android:layout_height="4px"
+							android:background="#d7d7d7">
+
+						</View>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+
+						<View
+							android:layout_marginLeft="101px"
+							android:layout_width="match_parent"
+							android:layout_height="4px"
+							android:background="#d7d7d7">
+
+						</View>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+						<View
+							android:layout_marginLeft="101px"
+							android:layout_width="match_parent"
+							android:layout_height="4px"
+							android:background="#d7d7d7">
+
+						</View>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:textSize="12sp">
+						</TextView>
+
+					</LinearLayout>
+
+				</RelativeLayout>&ndash;&gt;
+
+				</LinearLayout>
+
+			</androidx.core.widget.NestedScrollView>
+-->
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
