@@ -7,5 +7,9 @@
 
     <color name="grey_text">#403e3e66</color>
     <color name="calendar_header">#403e3e</color>
+    <color name="grey">#ebe6e7</color>
+    <color name="eventColor">#ffeeef</color>
+    <color name="hsjd"></color>
+
 
 </resources>

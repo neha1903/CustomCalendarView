@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="dayHeight">64dp</dimen>
+    <dimen name="day">15dp</dimen>
+    <dimen name="weekHeight">64dp</dimen>
+</resources>

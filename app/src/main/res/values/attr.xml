@@ -10,7 +10,4 @@
         <attr name="startHour" format="integer"/>
         <attr name="endHour" format="integer"/>
     </declare-styleable>
-
-
-
 </resources>
