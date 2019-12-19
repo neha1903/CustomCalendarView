@@ -12,7 +12,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-
 public class CwVDecorationDefault implements CwVDecoration {
 
     protected Context mContext;
@@ -29,7 +28,7 @@ public class CwVDecorationDefault implements CwVDecoration {
     public EventWeekView getEventView(Event event, Rect eventBound, int hourHeight, int separateHeight, int separateWidth) {
         EventWeekView eventWeekView = new EventWeekView(mContext);
         eventWeekView.setEvent(event);
-//        event.setName(jobListItem.job_id);
+        event.setName(event.getName());
 //        eventWeekView.setEventText(jobListItem.job_id);
 /*        Date d = null;
         try {

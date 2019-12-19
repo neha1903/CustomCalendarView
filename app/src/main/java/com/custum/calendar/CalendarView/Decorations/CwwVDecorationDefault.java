@@ -28,6 +28,7 @@ public class CwwVDecorationDefault implements CwwVDecoration {
     public EventWorkWeekView getEventView(Event event, Rect eventBound, int hourHeight, int separateHeight, int separateWidth) {
         EventWorkWeekView eventWeekView = new EventWorkWeekView(mContext);
         eventWeekView.setEvent(event);
+        eventWeekView.setEventText(event.getName());
 //        event.setName(jobListItem.job_id);
 //        eventWeekView.setEventText(jobListItem.job_id);
 //        Date d = null;
@@ -41,7 +42,7 @@ public class CwwVDecorationDefault implements CwwVDecoration {
         Log.e("TAG", goal);
         int a = 0, b = 4, s = 0;
         if(goal.equals("Monday")){
-            a = 0; b = 4; s = 4;
+            a = 0; b = 4;
         }else if(goal.equals("Tuesday")){
             a = 1; b = 3;
         }else if(goal.equals("Wednesday")){

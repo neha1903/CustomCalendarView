@@ -334,7 +334,7 @@ public class CalendarView extends LinearLayout{
             Resources r = getContext().getResources();
             int px = (int) TypedValue.applyDimension(
                         TypedValue.COMPLEX_UNIT_DIP,
-                    34,
+                    32,
                         r.getDisplayMetrics()
             );
             LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,  55);
@@ -347,7 +347,7 @@ public class CalendarView extends LinearLayout{
             Resources r = getContext().getResources();
             int px = (int) TypedValue.applyDimension(
                     TypedValue.COMPLEX_UNIT_DIP,
-                    34,
+                    32,
                     r.getDisplayMetrics()
             );
             LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,  55);

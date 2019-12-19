@@ -98,6 +98,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillEvents() {
+        eventDays = new HashSet<Date>();
+        Calendar cal = Calendar.getInstance();
+        eventDays.add(cal.getTime());
+        for(int i =0; i<5; i++){
+            cal.add(Calendar.DAY_OF_MONTH, 1);
+            eventDays.add(cal.getTime());
+        }
+
+
         events = new ArrayList<>();
         {
             Calendar timeStart = Calendar.getInstance();
@@ -209,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
                     /*GetContainerListWorkWeek getContainerListWorkWeek = new GetContainerListWorkWeek();
                     getContainerListWorkWeek.execute();*/
                 }else{
+                    cv.updateCalendar(eventDays);
                     /*GetContainerListMonth getContainerListMonth = new GetContainerListMonth();
                     getContainerListMonth.execute();*/
                 }
@@ -236,6 +246,7 @@ public class MainActivity extends AppCompatActivity {
                     /*GetContainerListWorkWeek getContainerListWorkWeek = new GetContainerListWorkWeek();
                     getContainerListWorkWeek.execute();*/
                 }else{
+                    cv.updateCalendar(eventDays);
                     /*GetContainerListMonth getContainerListMonth = new GetContainerListMonth();
                     getContainerListMonth.execute();*/
                 }
@@ -252,6 +263,7 @@ public class MainActivity extends AppCompatActivity {
                 cv.gridOnClick(parent, view, position);
                 /*GetContainerListMonth getContainerListMonth = new GetContainerListMonth();
                 getContainerListMonth.execute();*/
+                cv.updateCalendar(eventDays);
                 dateOnClick();
             }
         });
@@ -264,14 +276,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        GridView gridView2 = findViewById(R.id.calendar_work_week_grid);
-        gridView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                cv.gridOnClick(parent, view, position);
-                dateOnClick();
-            }
-        });
 
 
         dayView.setOnClickListener(new View.OnClickListener() {
@@ -356,6 +360,7 @@ public class MainActivity extends AppCompatActivity {
                 visibilityGone();
                 setClick();
                 cv.updateCalendar();
+                cv.updateCalendar(eventDays);
                 /*GetContainerList getContainerList = new GetContainerList();
                 getContainerList.execute();
                 GetContainerListMonth getContainerListMonth = new GetContainerListMonth();
